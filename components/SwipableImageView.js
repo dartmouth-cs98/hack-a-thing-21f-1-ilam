@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, PanResponder, Dimensions, Image, Animated } from 'react-native';
+import { StyleSheet, Text, View, PanResponder, Dimensions, 
+    Image, Animated, TouchableOpacity } from 'react-native';
 
 const Dates = [
     { id: "1", uri: require('../assets/pic1.jpeg'), description: "A charming photo with two kittens stacked on top of each other" },
