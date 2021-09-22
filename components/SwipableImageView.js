@@ -112,6 +112,9 @@ class SwipableImageView extends Component {
                             position: "absolute"
                         }
                         ]}
+                        accessible={true}
+                        onAccessibilityTap={this.position.setValue({ x: 130.0, y: 10.0 })}
+                        onMagicTap={this.position.setValue({ x: 130.0, y: 10.0 })}
                     >
                         <Animated.View
                             style={{
@@ -122,8 +125,7 @@ class SwipableImageView extends Component {
                             left: 40,
                             zIndex: 1000
                             }}
-                            accessibilityLabel="like"
-                            accessibilityHint="Likes a user and continues"
+                            accessibilityHint="Swipe right to like"
                         >
                             <Text
                             style={{
@@ -147,8 +149,7 @@ class SwipableImageView extends Component {
                             right: 40,
                             zIndex: 1000
                             }}
-                            accessibilityLabel="nope"
-                            accessibilityHint="Rejects a user and continues"
+                            accessibilityHint="Swipe left to pass"
                         >
                             <Text
                             style={{
@@ -174,7 +175,7 @@ class SwipableImageView extends Component {
                         source={item.uri}
                         accessible={true}
                         accessibilityLabel={item.description}
-                        accessibilityHint="Swipe right to like, swipe left to reject"
+                        accessibilityHint="Swipe right to like, swipe left to pass"
                         // For iOS11+
                         accessibilityIgnoresInvertColors={false}
                         />
@@ -201,7 +202,7 @@ class SwipableImageView extends Component {
                     accessibilityIgnoresInvertColors={false}
                     accessible={true}
                     accessibilityLabel={item.description}
-                    accessibilityHint="Swipe right to like, swipe left to reject"
+                    accessibilityHint="Swipe right to like, swipe left to pass"
                   />
                 </Animated.View>
               );

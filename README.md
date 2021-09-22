@@ -17,7 +17,7 @@ The motivation of this project was to learn how animations and gestures work in 
 
 ### With Accessibility
 
-Lastly, I decided to add different forms of accessibility to the Tinder project. As I was not following a tutorial but instead working through documentation, this project took the longest to implement and had varying results. Accessibility features involved included inverting colors (e.g. Classic Invert) and VoiceOver. Accessibility properties I worked with included the following: `accessible`, `accessibilityLabel`, `accessibilityHint`, `accessibilityIgnoresInvertColors`, `TouchableOpacity` and `accessibilityRole`. Please note that I personally have an iPhone and consequently focused on iOS-specific accessibility features for best results (in testing).
+Lastly, I decided to add different forms of accessibility to the Tinder project. As I was not following a tutorial but instead working through documentation, this project took the longest to implement and had varying results. Accessibility features involved included inverting colors (e.g. Classic Invert) and VoiceOver. Accessibility properties I worked with included the following: `accessible`, `accessibilityLabel`, `accessibilityHint`, `accessibilityIgnoresInvertColors`, `TouchableOpacity`, `accessibilityRole`, `onAccessibilityTap` and `onMagicTap`. Please note that I personally have an iPhone and consequently focused on iOS-specific accessibility features for best results (in testing).
 
 **Classic Invert**
 
@@ -31,7 +31,9 @@ To accomodate a user who may use classic invert, it's important to keep the colo
 
 **VoiceOver**
 
-This was by far the hardest part of this hack, for no reason other than when VoiceOver is enabled, all gesture recognizers are disabled, which completely contradicts how Tinder swipes work. Moreover, because VoiceOver is for the visually impaired, the fact that there are no words made the experience even less accessible. To this end, I added `accessibilityLabel` and `accessibilityHint` for descriptions on the image, as well as cues on how the user can proceed. I also experimented with `TouchableOpacity` and `accessibilityRole`, but neither showed results so they have been removed from the code. Given more time, I would follow an accessibility tutorial from start to finish (the tutorials I found were few and far between, which is why I originally believed that experimenting on my own with documentation would have been preferrable).
+This was by far the hardest part of this hack, for no reason other than when VoiceOver is enabled, all gesture recognizers are disabled, which completely contradicts how Tinder swipes work. Moreover, because VoiceOver is for the visually impaired, the fact that there are no words made the experience even less accessible. To this end, I added `accessibilityLabel` and `accessibilityHint` for descriptions on the image, as well as cues on how the user can proceed. I also experimented with `TouchableOpacity` and `accessibilityRole`, but neither showed results so they have been removed from the code. Lastly, I tried using `onAccessibilityTap` and `onMagicTap` to mimic a pseudo pan gesture, but the results were not up to par. Given more time, I would follow an accessibility tutorial from start to finish (the tutorials I found were few and far between, which is why I originally believed that experimenting on my own with documentation would have been preferrable).
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](assets/voice-over.mov)
 
 ## Who Did What?
 
