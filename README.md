@@ -33,7 +33,7 @@ To accomodate a user who may use classic invert, it's important to keep the colo
 
 This was by far the hardest part of this hack, for no reason other than when VoiceOver is enabled, all gesture recognizers are disabled, which completely contradicts how Tinder swipes work. Moreover, because VoiceOver is for the visually impaired, the fact that there are no words made the experience even less accessible. To this end, I added `accessibilityLabel` and `accessibilityHint` for descriptions on the image, as well as cues on how the user can proceed. I also experimented with `TouchableOpacity` and `accessibilityRole`, but neither showed results so they have been removed from the code. Lastly, I tried using `onAccessibilityTap` and `onMagicTap` to mimic a pseudo pan gesture, but the results were not up to par. Given more time, I would follow an accessibility tutorial from start to finish (the tutorials I found were few and far between, which is why I originally believed that experimenting on my own with documentation would have been preferrable).
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](assets/voice-over.mov)
+![Voice Over](https://user-images.githubusercontent.com/52434838/134403739-2cd77e8c-69b8-47a8-b9cc-8e1acf306885.mov)
 
 ## Who Did What?
 
