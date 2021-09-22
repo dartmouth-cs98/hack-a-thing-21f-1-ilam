@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, PanResponder, Dimensions, Image, Animated } from 'react-native';
+import { StyleSheet, Text, View, PanResponder, Dimensions, Image, Animated } from 'react-native';
 
-const Foods = [
-    { id: "1", uri: require('../assets/pic1.jpeg') },
-    { id: "2", uri: require('../assets/pic2.jpeg') },
-    { id: "3", uri: require('../assets/pic3.jpeg') },
-    { id: "4", uri: require('../assets/pic4.jpeg') },
-    { id: "5", uri: require('../assets/pic5.jpeg') },
+const Dates = [
+    { id: "1", uri: require('../assets/pic1.jpeg'), description: "A charming photo with two kittens stacked on top of each other" },
+    { id: "2", uri: require('../assets/pic2.jpeg'), description: "Two cute bunnies mingling" },
+    { id: "3", uri: require('../assets/pic3.jpeg'), description: "A seal who is very, very flat" },
+    { id: "4", uri: require('../assets/pic4.jpeg'), description: "Cute fox. Might be a dog" },
+    { id: "5", uri: require('../assets/pic5.jpeg'), description: "Small kitten peeking under a hat" },
   ];
 
 const SCREEN_HEIGHT = Dimensions.get('window').height
@@ -55,10 +55,7 @@ class SwipableImageView extends Component {
         })
     }
 
-    
-    
-
-    renderFoods = () => {
+    renderDates = () => {
         this.rotate = this.position.x.interpolate({
             inputRange: [-SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2],
             outputRange: ['-10deg', '0deg', '10deg'],
@@ -97,7 +94,7 @@ class SwipableImageView extends Component {
             extrapolate: 'clamp'
          })
 
-        return Foods.map((item, i) => {
+        return Dates.map((item, i) => {
             if (i < this.state.currentIndex) {
               return null;
             } else if (i == this.state.currentIndex) {
@@ -124,6 +121,8 @@ class SwipableImageView extends Component {
                             left: 40,
                             zIndex: 1000
                             }}
+                            accessibilityLabel="like"
+                            accessibilityHint="Likes a user and continues"
                         >
                             <Text
                             style={{
@@ -147,6 +146,8 @@ class SwipableImageView extends Component {
                             right: 40,
                             zIndex: 1000
                             }}
+                            accessibilityLabel="nope"
+                            accessibilityHint="Rejects a user and continues"
                         >
                             <Text
                             style={{
@@ -170,6 +171,11 @@ class SwipableImageView extends Component {
                             borderRadius: 20
                         }}
                         source={item.uri}
+                        accessible={true}
+                        accessibilityLabel={item.description}
+                        accessibilityHint="Swipe right to like, swipe left to reject"
+                        // For iOS11+
+                        accessibilityIgnoresInvertColors={false}
                         />
                     </Animated.View>
               );
@@ -191,6 +197,10 @@ class SwipableImageView extends Component {
                       borderRadius: 20
                     }}
                     source={item.uri}
+                    accessibilityIgnoresInvertColors={false}
+                    accessible={true}
+                    accessibilityLabel={item.description}
+                    accessibilityHint="Swipe right to like, swipe left to reject"
                   />
                 </Animated.View>
               );
@@ -200,7 +210,10 @@ class SwipableImageView extends Component {
 
     render() {
         return (
-            this.renderFoods()
+            <View style={styles.container}>
+                {this.renderDates()}
+            </View>
+            
       );
     }
 }
@@ -212,15 +225,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    headerText: {
-      fontSize: 100,
-      fontWeight: 'bold',
-      textAlign: 'center',
-    },
-    regularText: {
-      fontSize: 20,
-      textAlign: 'center',
-    }
   });
 
 export default SwipableImageView;
