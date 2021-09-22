@@ -57,10 +57,10 @@ Irene Lam (irene.x.lam.22@dartmouth.edu)
 
 ## Acknowledgments
 
-[Tinder Swipe]("https://www.instamobile.io/react-native-controls/react-native-swipe-cards-tinder/")
+[Tinder Swipe](https://www.instamobile.io/react-native-controls/react-native-swipe-cards-tinder/)
 
 **(Documentation)**
 
-[React Native Accessibility Docs]("https://reactnative.dev/docs/accessibility")
+[React Native Accessibility Docs](https://reactnative.dev/docs/accessibility)
 
-[Useful Medium Article on Commonly Used Accessibility Features in Coding]("https://medium.com/@larenelg/creating-inclusive-apps-in-react-native-the-coding-bit-bd3832349009")
+[Useful Medium Article on Commonly Used Accessibility Features in Coding](https://medium.com/@larenelg/creating-inclusive-apps-in-react-native-the-coding-bit-bd3832349009)
