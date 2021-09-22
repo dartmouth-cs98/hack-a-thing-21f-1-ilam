@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import Todo from './components/todo';
+import SwipableImageView from './components/SwipableImageView';
 
 export default function App() {
   return (
-    <Todo />
+    // <Todo />
+    <SwipableImageView />
   );
 }
 
