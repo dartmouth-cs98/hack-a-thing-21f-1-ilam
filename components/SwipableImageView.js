@@ -113,8 +113,8 @@ class SwipableImageView extends Component {
                         }
                         ]}
                         accessible={true}
-                        onAccessibilityTap={this.position.setValue({ x: 130.0, y: 10.0 })}
-                        onMagicTap={this.position.setValue({ x: 130.0, y: 10.0 })}
+                        // onAccessibilityTap={this.position.setValue({ x: 130.0, y: 10.0 })}
+                        // onMagicTap={this.position.setValue({ x: 130.0, y: 10.0 })}
                     >
                         <Animated.View
                             style={{
